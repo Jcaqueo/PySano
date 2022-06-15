@@ -1,0 +1,2 @@
+# PySano
+Sombrero seleccionador
