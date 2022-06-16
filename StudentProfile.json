@@ -1,0 +1,248 @@
+{
+    "firstName": "Pepito",
+    "lastName": "Perez",
+    "performance": {
+        "UVAS":{
+            "1":{
+                "control": {
+                    "nota": 90,
+                    "tiempo": 20,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 62
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 76,
+                        "tiempo":10,
+                        "intento": 1
+                    },
+                    {
+                        "id": 2,
+                        "nota": 55,
+                        "tiempo":10,
+                        "intento": 3
+                    }
+                ]
+            },
+            "2":{
+                "control": {
+                    "nota": 50,
+                    "tiempo": 15,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 10
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 83,
+                        "tiempo":16,
+                        "intento": 3
+                    },
+                    {
+                        "id": 2,
+                        "nota": 100,
+                        "tiempo":19,
+                        "intento": 1
+                    },
+                    {
+                        "id": 3,
+                        "nota": 0,
+                        "tiempo":0,
+                        "intento": 0
+                    }
+
+                ]
+            },
+            "3":{
+                "control": {
+                    "nota": 50,
+                    "tiempo": 15,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 92
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 100,
+                        "tiempo":15,
+                        "intento": 3
+                    },
+                    {
+                        "id": 2,
+                        "nota": 53,
+                        "tiempo":12,
+                        "intento": 1
+                    },
+                    {
+                        "id": 3,
+                        "nota": 62,
+                        "tiempo":9,
+                        "intento": 1
+                    }
+
+                ]
+            },
+            "4":{
+                "control": {
+                    "nota": 76,
+                    "tiempo": 18,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 100
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 100,
+                        "tiempo":16,
+                        "intento": 2
+                    },
+                    {
+                        "id": 2,
+                        "nota": 100,
+                        "tiempo":15,
+                        "intento": 2
+                    },
+                    {
+                        "id": 3,
+                        "nota": 100,
+                        "tiempo":10,
+                        "intento": 1
+                    }
+
+                ]
+            },
+            "5":{
+                "control": {
+                    "nota": 73,
+                    "tiempo": 15,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 44
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 85,
+                        "tiempo":16,
+                        "intento": 1
+                    },
+                    {
+                        "id": 2,
+                        "nota": 88,
+                        "tiempo":18,
+                        "intento": 1
+                    },
+                    {
+                        "id": 3,
+                        "nota": 100,
+                        "tiempo":20,
+                        "intento": 2
+                    }
+
+                ]
+            },
+            "6":{
+                "control": {
+                    "nota": 55,
+                    "tiempo": 18,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 79
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 11,
+                        "tiempo":15,
+                        "intento": 1
+                    },
+                    {
+                        "id": 2,
+                        "nota": 72,
+                        "tiempo":17,
+                        "intento": 2
+                    },
+                    {
+                        "id": 3,
+                        "nota": 44,
+                        "tiempo": 12,
+                        "intento": 1
+                    }
+
+                ]
+            },
+            "7":{
+                "control": {
+                    "nota": 100,
+                    "tiempo":20,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 100
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 98,
+                        "tiempo":10,
+                        "intento": 1
+                    },
+                    {
+                        "id": 2,
+                        "nota": 100,
+                        "tiempo":13,
+                        "intento": 2
+                    },
+                    {
+                        "id": 3,
+                        "nota": 100,
+                        "tiempo":9,
+                        "intento": 1
+                    }
+
+                ]
+            },
+            "8":{
+                "control": {
+                    "nota": 73,
+                    "intento": 1
+                },
+                "tarea": {
+                    "nota": 100
+                },
+                "evaluacionesFormativas": [
+                    {
+                        "id": 1,
+                        "nota": 21,
+                        "tiempo":12,
+                        "intento": 1
+                    },
+                    {
+                        "id": 2,
+                        "nota": 48,
+                        "tiempo":12,
+                        "intento": 2
+                    }
+
+                ]
+            },
+            "certamenes": [
+                    {
+                        "id": 1,
+                        "nota": 21
+                    }
+                ]
+        }
+    }
+}
