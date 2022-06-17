@@ -1,10 +1,11 @@
 {
     "firstName": "Pepito",
     "lastName": "Perez",
-    "rol":"201873080-4",
+    "rol":"201873081-5",
     "performance": {
-        "UVAS":{
-            "1":{
+        "UVAS":[
+            {
+                "id": 1,
                 "control": {
                     "nota": 90,
                     "tiempo": 20,
@@ -28,7 +29,8 @@
                     }
                 ]
             },
-            "2":{
+            {
+                "id": 2,
                 "control": {
                     "nota": 50,
                     "tiempo": 15,
@@ -59,7 +61,8 @@
 
                 ]
             },
-            "3":{
+            {
+                "id": 3,
                 "control": {
                     "nota": 50,
                     "tiempo": 15,
@@ -90,7 +93,8 @@
 
                 ]
             },
-            "4":{
+            {
+                "id": 4,
                 "control": {
                     "nota": 76,
                     "tiempo": 18,
@@ -121,7 +125,8 @@
 
                 ]
             },
-            "5":{
+            {
+                "id": 5,
                 "control": {
                     "nota": 73,
                     "tiempo": 15,
@@ -152,7 +157,8 @@
 
                 ]
             },
-            "6":{
+            {
+                "id": 6,
                 "control": {
                     "nota": 55,
                     "tiempo": 18,
@@ -183,7 +189,8 @@
 
                 ]
             },
-            "7":{
+            {
+                "id": 7,
                 "control": {
                     "nota": 100,
                     "tiempo":20,
@@ -214,7 +221,8 @@
 
                 ]
             },
-            "8":{
+            {
+                "id": 8,
                 "control": {
                     "nota": 73,
                     "intento": 1
@@ -237,13 +245,14 @@
                     }
 
                 ]
-            },
-            "certamenes": [
-                    {
-                        "id": 1,
-                        "nota": 21
-                    }
-                ]
-        }
+            }
+        ],
+        "certamenes": [
+                {
+                    "id": 1,
+                    "nota": 21
+                }
+            ]
     }
+    
 }
