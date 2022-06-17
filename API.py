@@ -1,8 +1,6 @@
 #Librerias a utilizar
 import json
 import math
-import sys
-sys.path.append("..")
 from BD.BD import *
 
 #Funcion que dado un usuario nuevo lo ingresa a la base de datos

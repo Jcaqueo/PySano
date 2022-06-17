@@ -27,3 +27,25 @@ def uploadStudent(student,values):
         print("Usuario "+rol+", añandido exitosamente a la base de datos.")
     except Exception as error:
         print(error)
+
+def getStudent(student):
+    #Intentamos obtener el estudiante por rol 
+    try:
+        #Realizamos una conexion y obtenemos el cursor
+        conn = connect()
+        cursor = conn.cursor()
+        rol = student 
+        table = "Student"
+        query = 'Select * from %s where "Rol" =  %s'
+        print(query)
+        argsTuple = (table,rol)
+        ans = cursor.execute(query,argsTuple)
+        print(ans)
+        conn.commit()
+        conn.close()
+        cursor.close()
+    except Exception as error:
+        print(error)
+
+getStudent("201873081-5")
+
