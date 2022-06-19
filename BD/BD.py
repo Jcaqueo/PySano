@@ -1,12 +1,15 @@
+import sys
 import psycopg2
+# import config from config.py in the same directory
+from .config import *
 
 
 def connect():
     try:
         print('Conectando a la base de datos PostgreSQL...')
         conn = psycopg2.connect(
-            "dbname=PySano user=postgres password=admin host=127.0.1.1")
-        print('Conexion exitosa')
+            f"dbname={DB_DATABASE_NAME} user={DB_USERNAME} password={DB_PASSWORD} host={DB_HOST} port={DB_PORT}")
+        print('Conexion exitosa!')
         return conn
     except Exception as error:
         print(error)
@@ -18,12 +21,12 @@ def uploadStudent(student, values):
         conn = connect()
         cursor = conn.cursor()
         rol = student
-        Uvas = values
-        Uvas += [0]*(9-len(Uvas))
-        table = '"Student"'
-        query = 'INSERT INTO %s ("Rol", "Uva1", "Uva2", "Uva3", "Uva4", "Uva5", "Uva6", "Uva7", "Uva8", "Uva9") VALUES (%%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s)' % table
-        argsTuple = (rol, Uvas[0], Uvas[1], Uvas[2], Uvas[3],
-                     Uvas[4], Uvas[5], Uvas[6], Uvas[7], Uvas[8])
+        uvas = values
+        uvas += [0]*(9-len(uvas))
+        table = "student"
+        query = 'INSERT INTO %s (rol, uva1, uva2, uva3, uva4, uva5, uva6, uva7, uva8, uva9) VALUES (%%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s, %%s)' % table
+        argsTuple = (rol, uvas[0], uvas[1], uvas[2], uvas[3],
+                     uvas[4], uvas[5], uvas[6], uvas[7], uvas[8])
         cursor.execute(query, argsTuple)
         conn.commit()
         conn.close()
@@ -40,8 +43,8 @@ def getStudent(student):
         conn = connect()
         cursor = conn.cursor()
         rol = student
-        table = "Student"
-        query = f'Select * from "{table}" where "Rol" =  %s'
+        table = "student"
+        query = f'SELECT * FROM "{table}" where rol =  %s'
         argsTuple = (rol,)
         cursor.execute(query, argsTuple)
         ans = cursor.fetchall()
@@ -59,4 +62,3 @@ def getStudent(student):
 
     except Exception as error:
         print(error)
-

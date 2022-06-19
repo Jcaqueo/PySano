@@ -19,7 +19,7 @@ def createStudent(data):
     apellido = data["lastName"]
     rol = data["rol"]
     desempeño = data["performance"]["UVAS"]
-    Uvas = list()
+    uvas = list()
     for record in desempeño:
         # Desempaquetamos el desempeño
         uva = record["id"]
@@ -30,9 +30,9 @@ def createStudent(data):
         # Calculamos la nota correspondiente a la uva
         calificacion = math.floor(
             7000 * (0.003*int(control) + 0.005*int(tarea)+0.002*int(EFAverage)))
-        Uvas.append(calificacion)
+        uvas.append(calificacion)
         # Agregamos al estudiante a la base de datos
-    uploadStudent(rol, Uvas)
+    uploadStudent(rol, uvas)
 
 
 def identifyStudent(studentFile):
@@ -43,12 +43,14 @@ def identifyStudent(studentFile):
     # Buscamos al usuario en la base de datos
     student = getStudent(rol)
 
-    #Si existe le buscamos un ejercicios en funcion de la uva
+    # Si existe le buscamos un ejercicios en funcion de la uva
     if student:
         print("El usuario recibe su ejercicio y es feliz")
     else:
-        #Si no existe lo creamos
+        # Si no existe lo creamos
         createStudent(data)
+
+
 # LLamamos a la funcion
 with open('./StudentProfile.json', 'r') as f:
     # Llamamos a la funcion
