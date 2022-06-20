@@ -3,9 +3,8 @@ import json
 import math
 from BD.BD import *
 
+
 # Funcion que dado un usuario nuevo lo ingresa a la base de datos
-
-
 def createStudent(data):
     # Por cada UVA se cuantificara el desempeño siguiendo la siguiente formula
     # D = 0.3*nControles + 0.5*nTareas + 0.2*nEvaluacionFormativa
@@ -35,7 +34,14 @@ def createStudent(data):
     uploadStudent(rol, uvas)
 
 
-def identifyStudent(studentFile):
+def selectBestQuestions(student, uva):
+    questions = getQuestions(uva)
+    print(questions)
+    # select best questions
+    print("El usuario recibe su ejercicio y es feliz")
+
+
+def identifyStudent(studentFile, uva):
     # Creamos un diccionario a partir del json
     data = json.load(studentFile)
     # Obtenemos su identificador
@@ -45,7 +51,7 @@ def identifyStudent(studentFile):
 
     # Si existe le buscamos un ejercicios en funcion de la uva
     if student:
-        print("El usuario recibe su ejercicio y es feliz")
+        selectBestQuestions(rol, uva)
     else:
         # Si no existe lo creamos
         createStudent(data)
@@ -54,4 +60,4 @@ def identifyStudent(studentFile):
 # LLamamos a la funcion
 with open('./StudentProfile.json', 'r') as f:
     # Llamamos a la funcion
-    identifyStudent(f)
+    identifyStudent(f, 4)
