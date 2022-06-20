@@ -90,6 +90,9 @@ def identifyStudent(studentFile, uva):
     else:
         # Si no existe lo creamos
         createStudent(data)
+        student = getStudent(rol)
+        questions = selectBestQuestions(student, uva)
+        print("Se ha creado al estudiante y se han seleccionado los ejercicios")
 
 
 # LLamamos a la funcion

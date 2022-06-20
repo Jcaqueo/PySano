@@ -80,7 +80,7 @@ def getUvaCategory(uva):
 
 
 def getQuestions(uva):
-    # Obtain all questions from the database for the given uva
+    # Obtener todas las preguntas de un UVA
     try:
         # Realizamos una conexion y obtenemos el cursor
         conn = connect()
