@@ -62,3 +62,51 @@ def getStudent(student):
 
     except Exception as error:
         print(error)
+
+
+def getUvaCategory(uva):
+    categories = {
+        1: ["INT"],
+        2: ["IPY"],
+        3: ["CON"],
+        4: ["CIC"],
+        5: ["FUN"],
+        6: ["STR"],
+        7: ["LIS"],
+        8: ["DIC"],
+        9: ["TXT"],
+    }
+    return categories[uva]
+
+
+def getQuestions(uva):
+    # Obtain all questions from the database for the given uva
+    try:
+        # Realizamos una conexion y obtenemos el cursor
+        conn = connect()
+        cursor = conn.cursor()
+        table = "questions_by_category"
+        categories_names = getUvaCategory(uva)
+
+        questions = []
+        for category in categories_names:
+            query = f'SELECT * FROM "{table}" where category_name =  %s'
+            argsTuple = (category,)
+            cursor.execute(query, argsTuple)
+            ans = cursor.fetchall()
+            questions += ans
+
+        conn.commit()
+        conn.close()
+        cursor.close()
+
+        if ans != []:
+            print("Preguntas encontradas exitosamente.")
+            return ans
+
+        else:
+            print("No se encontraron preguntas para el uva "+str(uva))
+            return None
+
+    except Exception as error:
+        print(error)
