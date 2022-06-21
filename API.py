@@ -73,7 +73,12 @@ def selectBestQuestions(student, uva):
     questions.sort(key=lambda x: (recommended_order.index(
         x[-1]), abs(studentUvaScore - x[7])))
 
-    return questions
+    # make each item a json
+    response = []
+    for id, title, question, type, feedback, input_instructions, output_instructions, difficulty, category_name, category_info, category_stamp, recomendado in questions:
+        response.append({"id": id, "title": title, "question": question, "type": type, "feedback": feedback, "input_instructions": input_instructions, "output_instructions": output_instructions, "difficulty": difficulty, "category_name": category_name, "category_info": category_info, "category_stamp": category_stamp, "recommended": recomendado, "done": "No"})
+
+    return response
 
 
 def identifyStudent(rol, uva):

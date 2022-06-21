@@ -25,4 +25,3 @@ async def main(student: str = "", uva: str = ""):
     print(student)
     print(uva)
     return identifyStudent(student, uva)
-
