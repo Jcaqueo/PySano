@@ -29,12 +29,13 @@ class Performance(BaseModel):
     UVAS: List[UVA] = []
     certamanes: List[Certamen] = []
 
-class Student(BaseModel):
+class StudentData(BaseModel):
     firstName: str
     lastName: str
     rol: str
     performance: Performance
 
+
 class Request(BaseModel):
-    student: Student
+    student: str
     uva: int

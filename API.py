@@ -75,23 +75,18 @@ def selectBestQuestions(student, uva):
     return questions
 
 
-def identifyStudent(studentData: Student, uva):
+def identifyStudent(rol, uva):
     # Creamos un diccionario a partir del json
     # data = json.load(studentFile)
     # Obtenemos su identificador
-    rol = studentData.rol
+    #rol = studentData.rol
     # Buscamos al usuario en la base de datos
     student = getStudent(rol)
-
+    print(student)
     # Si existe le buscamos un ejercicios en funcion de la uva
-    if student:
-        questions = selectBestQuestions(student, uva)
-        print("Se han seleccionado los ejercicios")
-        return questions
-    else:
-        # Si no existe lo creamos
-        createStudent(studentData)
-        student = getStudent(rol)
-        questions = selectBestQuestions(student, uva)
-        print("Se ha creado al estudiante y se han seleccionado los ejercicios")
-        return questions
+    questions = selectBestQuestions(student, uva)
+    print("Se han seleccionado los ejercicios")
+    return questions
+
+
+identifyStudent("201873081-0",2)
