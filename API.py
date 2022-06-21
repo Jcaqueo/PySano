@@ -2,7 +2,7 @@
 import json
 import math
 from BD.BD import *
-
+from models import *
 
 # Funcion que dado un usuario nuevo lo ingresa a la base de datos
 def createStudent(data):
@@ -75,11 +75,11 @@ def selectBestQuestions(student, uva):
     return questions
 
 
-def identifyStudent(studentFile, uva):
+def identifyStudent(studentData: Student, uva):
     # Creamos un diccionario a partir del json
-    data = json.load(studentFile)
+    # data = json.load(studentFile)
     # Obtenemos su identificador
-    rol = data["rol"]
+    rol = studentData.rol
     # Buscamos al usuario en la base de datos
     student = getStudent(rol)
 
@@ -87,15 +87,11 @@ def identifyStudent(studentFile, uva):
     if student:
         questions = selectBestQuestions(student, uva)
         print("Se han seleccionado los ejercicios")
+        return questions
     else:
         # Si no existe lo creamos
-        createStudent(data)
+        createStudent(studentData)
         student = getStudent(rol)
         questions = selectBestQuestions(student, uva)
         print("Se ha creado al estudiante y se han seleccionado los ejercicios")
-
-
-# LLamamos a la funcion
-with open('./StudentProfile.json', 'r') as f:
-    # Llamamos a la funcion
-    identifyStudent(f, 6)
+        return questions
