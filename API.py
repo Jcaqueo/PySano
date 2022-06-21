@@ -47,6 +47,7 @@ def isRecomended(studentUvaScore, difficulty):
 
 
 def selectBestQuestions(student, uva):
+    uva = int(uva)
     questionsOriginal = getQuestions(uva)
     # El estudiante tiene un score de desempeño para la UVA que va de 0 a 10000
     studentUvaScore = student[uva]
@@ -88,5 +89,3 @@ def identifyStudent(rol, uva):
     print("Se han seleccionado los ejercicios")
     return questions
 
-
-identifyStudent("201873081-0",2)

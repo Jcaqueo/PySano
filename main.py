@@ -21,8 +21,8 @@ app.add_middleware(
 )
 
 @app.get("/")
-async def main(student: Request):
-    print(student.student)
-    print(student.uva)
-    return identifyStudent(student.student, student.uva)
+async def main(student: str = "", uva: str = ""):
+    print(student)
+    print(uva)
+    return identifyStudent(student, uva)
 
