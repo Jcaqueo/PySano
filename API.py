@@ -70,8 +70,7 @@ def selectBestQuestions(student, uva):
     # Ordenamos los ejercicios por recomendado, siendo el primero el que se recomienda ("Recomendado")
     # El segundo criterio de ordenamiento es la dificultad, primero se muestran los más cercanos al score del estudiante
     recommended_order = ["Recomendado", "Fácil", "Difícil"]
-    questions.sort(key=lambda x: (recommended_order.index(
-        x[-1]), abs(studentUvaScore - x[7])))
+    questions.sort(key=lambda x: (x[-1] != "Recomendado", abs(studentUvaScore - x[7])))
 
     # make each item a json
     response = []
