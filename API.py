@@ -49,6 +49,8 @@ def isRecomended(studentUvaScore, difficulty):
 def selectBestQuestions(student, uva):
     uva = int(uva)
     questionsOriginal = getQuestions(uva)
+    if questionsOriginal is None:
+        return []
     # El estudiante tiene un score de desempeño para la UVA que va de 0 a 10000
     studentUvaScore = student[uva]
     print(
