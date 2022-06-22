@@ -94,4 +94,3 @@ def identifyStudent(rol, uva):
     questions = selectBestQuestions(student, uva)
     print("Se han seleccionado los ejercicios")
     return questions
-

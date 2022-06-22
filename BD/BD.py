@@ -110,3 +110,43 @@ def getQuestions(uva):
 
     except Exception as error:
         print(error)
+
+def increaseScore(rol, uva, amount=100):
+    try:
+        # Realizamos una conexion y obtenemos el cursor
+        conn = connect()
+        cursor = conn.cursor()
+        table = "student"
+
+        query = f'UPDATE "{table}" SET uva{uva} = uva{uva} + {amount} WHERE rol = %s'
+        argsTuple = (rol,)
+        cursor.execute(query, argsTuple)
+
+        conn.commit()
+        conn.close()
+        cursor.close()
+
+        print("Puntuacion aumentada exitosamente.")
+
+    except Exception as error:
+        print(error)
+
+def decreaseScore(rol, uva, amount=100):
+    try:
+        # Realizamos una conexion y obtenemos el cursor
+        conn = connect()
+        cursor = conn.cursor()
+        table = "student"
+
+        query = f'UPDATE "{table}" SET uva{uva} = uva{uva} - {amount} WHERE rol = %s'
+        argsTuple = (rol,)
+        cursor.execute(query, argsTuple)
+
+        conn.commit()
+        conn.close()
+        cursor.close()
+
+        print("Puntuacion disminuida exitosamente.")
+
+    except Exception as error:
+        print(error)

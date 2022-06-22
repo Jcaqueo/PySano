@@ -1,4 +1,5 @@
 from API import *
+from BD.BD import *
 
 from models import *
 from fastapi import FastAPI, Body
@@ -19,6 +20,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.put("/incorrect")
+async def incorrect(student: str = "", uva: str = ""):
+    decreaseScore(student, uva)
+    return {"message": "Success"}
+
+@app.put("/correct")
+async def correct(student: str = "", uva: str = ""):
+    increaseScore(student, uva)
+    return {"message": "Success"}
+
 
 @app.get("/")
 async def main(student: str = "", uva: str = ""):
